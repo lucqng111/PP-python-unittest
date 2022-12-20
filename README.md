@@ -18,5 +18,22 @@ So, I wrote this topic to clarify unittest and hopefully it can help everyone wh
 
 1. Visualize Unittest Result Log
     Imaging your project has being run a long time. Unit Test module is written with thoudsand lines code. We have to track the result, the performance of service function and save the logger to db like `Redis`. Write function execute every single time or write decorator then add to every function. Both of them are very messy and hard to maintain. So i suggest a solution that solves these problems
+    
+    How to customize ?
+    Step 1 : Create Class `CustomTextTestResult` that inherit from `TextTestResult`
+        
+        Declare redis_client or redis_buffer as the temporarily memory
+        Start counting time at `startTest` function
+        Compute and save to redis_buffer at `stopTestRun` function
+
+    Step 2 : Custom TestCase by `CustomTestCase` class
+    Step 3 : Apply `CustomTextTestResult` to `CustomTextTestRunner`
+
+    This is the result :D 
 
 2. Create new assert
+    Default assert in python is fine, but create new and use it is great.
+    How to do ?
+    Step 1 : In custom TestCase class , add assert function
+    Step 2 : At unit test function , call it.
+    Here is the result :D 
