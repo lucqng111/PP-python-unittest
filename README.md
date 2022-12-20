@@ -109,7 +109,59 @@ So, I wrote this topic to clarify unittest and hopefully it can help everyone wh
 ### How to do ?
     
 1. Step 1 : In custom TestCase class , add assert function
+    In `CustomTestCase` add new assert
+    ```python
+        def assertString(self, expected_string, string, msg=None):
+            """Check that the expression is true."""
+            if expected_string != string:
+                msg = self._formatMessage(msg, f"{safe_repr(string)} is not same with {expected_string}" )
+                raise self.failureException(msg)
+    ``` 
     
 2. Step 2 : At unit test function , call it.
+    ```python
+        def test_new_assert(self):
+            hello_world = "Hello World"
+            self.assertString("Hello World", hello_world)
+        
+        def test_new_assert_2(self):
+            hello_world = "Hello World~~"
+            self.assertString("Hello World", hello_world)
+
+    ```
     
-    Here is the result :D 
+3. Run code
+    Here is the result :D
+
+    ```
+        Test case with func   : test_new_assert 
+        Status                : True
+        Runtime               : 9.965896606445312e-05
+                            
+        -----------
+
+        Test case with func   : test_new_assert_2 
+        Status                : False
+        Runtime               : 0.00010633468627929688
+                            
+        -----------
+        ======================================================================
+        FAIL: test_new_assert_2 (tests.test_case1.SimpleTestCase)
+        ----------------------------------------------------------------------
+        Traceback (most recent call last):
+        File "~/python_unittest_advanced/tests/test_case.py", line 38, in test_new_assert_2
+            self.assertString("Hello World", hello_world)
+        File "~/python_unittest_advanced/core/case.py", line 24, in assertString
+            raise self.failureException(msg)
+        AssertionError: 'Hello World~~' is not same with Hello World
+
+        ----------------------------------------------------------------------
+
+    ```
+# Summary
+
+# Thank you for spending time reading this topic.
+
+# Contact me
+1. Email : lucqng111@gmail.com
+2. Skype : live:lucqng111
