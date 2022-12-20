@@ -22,18 +22,25 @@ So, I wrote this topic to clarify unittest and hopefully it can help everyone wh
     How to customize ?
     Step 1 : Create Class `CustomTextTestResult` that inherit from `TextTestResult`
         
-        Declare redis_client or redis_buffer as the temporarily memory
-        Start counting time at `startTest` function
-        Compute and save to redis_buffer at `stopTestRun` function
+    Declare redis_client or redis_buffer as the temporarily memory
+    
+    Start counting time at `startTest` function
+    
+    Compute and save to redis_buffer at `stopTestRun` function
 
     Step 2 : Custom TestCase by `CustomTestCase` class
+    
     Step 3 : Apply `CustomTextTestResult` to `CustomTextTestRunner`
 
     This is the result :D 
 
 2. Create new assert
     Default assert in python is fine, but create new and use it is great.
+    
     How to do ?
+    
     Step 1 : In custom TestCase class , add assert function
+    
     Step 2 : At unit test function , call it.
+    
     Here is the result :D 
