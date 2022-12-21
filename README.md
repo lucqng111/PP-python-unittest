@@ -4,7 +4,9 @@
 # Introduction
 This topic is mentioning about module unittest in python. However, I want to go deeply about it, understand how it works and how can we adjust and improve unittest. Some developers are using them without understanding mechanism, they thought python which owns magic as current reality. As the result, when project is scaling up, a big amount of function will be added to unittest, it's called "Problem is coming" and don't let your boss know that. :D
 So, I wrote this topic to clarify unittest and hopefully it can help everyone who need. Also, this is my first topic.
-# Diagrams
+# Diagram
+
+![alt text](https://github.com/lucqng111/python_unittest_advanced/blob/master/component.png)
 
 # Component
 - `TestProgram`     :   The root of unittest in Python is located at `TestProgram` class. It initializes argurments that request send to.
@@ -158,10 +160,12 @@ So, I wrote this topic to clarify unittest and hopefully it can help everyone wh
         ----------------------------------------------------------------------
 
     ```
-# Summary
 
-# Thank you for spending time reading this topic.
+### Source : https://github.com/lucqng111/python_unittest_advanced
 
 # Contact me
 1. Email : lucqng111@gmail.com
 2. Skype : live:lucqng111
+
+# Thank you for spending time reading this topic.
+

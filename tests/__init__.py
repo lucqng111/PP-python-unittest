@@ -1,2 +1,2 @@
-from .test_case1 import SimpleTestCase
+from .test_case import SimpleTestCase
 
